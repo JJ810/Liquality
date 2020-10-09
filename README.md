@@ -45,4 +45,4 @@ yarn run isready
 
 ## Live Demo
 
-https://liquality-test.surgh.sh
+https://liquality-test.surge.sh
