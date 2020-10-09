@@ -1,5 +1,6 @@
-import axios from "axios";
+import axios, { AxiosResponse } from 'axios'
 
-const baseUrl = "https://liquality.io/swap/agent/api/swap/marketinfo";
+const baseUrl = process.env.REACT_APP_API_URL
 
-export const getData = async () => await axios.get(baseUrl);
+export const getData = async (): Promise<AxiosResponse<any>> =>
+  await axios.get(`${baseUrl}/swap/marketinfo`)
