@@ -7,7 +7,7 @@ Liquality Test Task
 1. Go to root directory and create a `.env` file.
 2. Fill the `.env` file to set api url. For example: REACT_APP_API_URL=https://liquality.io/swap/agent/api
 
-### Install dependancies
+### Installs dependancies
 
 ```
 yarn install
@@ -29,6 +29,18 @@ yarn run build
 
 ```
 yarn run lint
+```
+
+### Formats files with Prettier
+
+```
+yarn run format
+```
+
+### Formats, Lints and Builds
+
+```
+yarn run isready
 ```
 
 ## Live Demo
