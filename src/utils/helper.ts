@@ -1,6 +1,5 @@
+export const formatNumber = (number: number): string => ('0' + number).slice(-2)
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString)
-  return `${
-    date.getMonth() + 1
-  }/${date.getDate()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+  return `${formatNumber(date.getMonth() + 1)}/${formatNumber(date.getDate())}/${date.getFullYear()} ${formatNumber(date.getHours())}:${formatNumber(date.getMinutes())}:${formatNumber(date.getSeconds())}`
 }
