@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './App.scss'
 import { getData } from './utils/api'
-import { formatDate } from './utils/helper'
+import { formatDate, formatEntry } from './utils/helper'
 import { ResponseData } from './utils/types'
 
 const App: React.FC = () => {
@@ -58,20 +58,22 @@ const App: React.FC = () => {
           <tbody>
             {typeof data !== 'undefined' &&
               data.length > 0 &&
-              data.map((d, i) => (
-                <tr key={i}>
-                  <td>{d.from}</td>
-                  <td>{d.to}</td>
-                  <td>{d.rate}</td>
-                  <td>{d.orderExpiresIn}</td>
-                  <td>{d.status}</td>
-                  <td>{d.max}</td>
-                  <td>{d.min}</td>
-                  <td>{formatDate(d.createdAt)}</td>
-                  <td>{formatDate(d.updatedAt)}</td>
-                  <td>{d.minConf}</td>
+              data.map((d, i) => {
+                const { from, to, rate, orderExpiresIn, status, max, min, createdAt, updatedAt, minConf } = d
+                return <tr key={i}>
+                  <td>{from}</td>
+                  <td>{to}</td>
+                  <td>{rate}</td>
+                  <td>{orderExpiresIn}</td>
+                  <td>{status}</td>
+                  <td>{formatEntry(max, from)}</td>
+                  <td>{formatEntry(min, from)}</td>
+                  <td>{formatDate(createdAt)}</td>
+                  <td>{formatDate(updatedAt)}</td>
+                  <td>{minConf}</td>
                 </tr>
-              ))}
+              }
+              )}
           </tbody>
         </table>
       </div>
