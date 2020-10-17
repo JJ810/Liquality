@@ -1,7 +1,3 @@
-# Liquality Test
-
-Liquality Test Task
-
 ## Project Setup
 
 1. Go to root directory and create a `.env` file.
@@ -42,7 +38,3 @@ yarn run format
 ```
 yarn run isready
 ```
-
-## Live Demo
-
-https://liquality-test.surge.sh
